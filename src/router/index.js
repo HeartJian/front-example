@@ -7,9 +7,9 @@ import HelloWorld from '../components/HelloWorld'
 
 Vue.use(Router)
 let routes = []
-basic.requireComponent.keys().forEach(fileName => {
+basic.pathComponents.forEach(result=>result.requireComponent.keys().forEach(fileName => {
   // 获取组件配置
-  const componentConfig = basic.requireComponent(fileName)
+  const componentConfig = result.requireComponent(fileName)
 
   // 获取组件的 PascalCase 命名
   const componentName = upperFirst(
@@ -19,15 +19,16 @@ basic.requireComponent.keys().forEach(fileName => {
     )
   )
   routes.push({
-    path: '/' + componentName,
+    path: '/' +result.fileName+"/"+ componentName,
     name: componentName,
     component: componentConfig.default || componentConfig
   })
-})
+}))
 routes.push({
   path: '/',
   component: HelloWorld
 })
+console.log(routes)
 export default new Router({
   routes: routes
 })
