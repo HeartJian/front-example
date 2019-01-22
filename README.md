@@ -1,6 +1,4 @@
-# prject1
-
-> A Vue.js project
+> Html,Css,Js技巧
 
 ## Build Setup
 
@@ -10,6 +8,9 @@ npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
+
+# open webSocket servoce
+npm run webSocket
 
 # build for production with minification
 npm run build

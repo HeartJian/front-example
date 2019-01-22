@@ -14,7 +14,7 @@
           <el-menu-item
             @click="openUrl(pathComponent,key)"
             v-for="key in pathComponent.keys"
-            v-bind:key="key"
+            :key="key"
             :index="key"
           >{{key}}</el-menu-item>
       </el-submenu>
@@ -27,14 +27,15 @@ import basic from "../utils/Basic.js";
 import { create } from 'domain';
 export default {
   data: function() {
-    return { defaultActive:sessionStorage.getItem("path"),pathComponents:basic.pathComponents};
+    return { defaultActive:sessionStorage.getItem("activeMenus"),pathComponents:basic.pathComponents};
   },
   methods: {
     openUrl(pathComponent,url) {
-        key=pathComponent.fileName+url
+        let key=pathComponent.fileName+"/"+url
         let path=sessionStorage.getItem("path")
         location.href = path?location.href.replace(path, key):location.href + key;
         sessionStorage.setItem("path",key)
+        sessionStorage.setItem("activeMenus",url)
     }
   },
 };

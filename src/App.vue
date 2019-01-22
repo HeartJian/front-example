@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import SelectMenu from './page/SelectMenu.vue'
+import SelectMenu from './components/SelectMenu.vue'
 export default {
   components:{SelectMenu},
   name: 'App'

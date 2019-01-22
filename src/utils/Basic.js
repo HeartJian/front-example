@@ -6,15 +6,15 @@ class Basic {
         this.pathComponents = path.map(a => {
             let result = new PathComponent(a);
             result.requireComponent = a==='js'? require.context(
-                "../components/js",
+                "../view/js",
                 false,
                 /^\.\/(.*)\.\w+$/
             ):a==='css'? require.context(
-                "../components/css",
+                "../view/css",
                 false,
                 /^\.\/(.*)\.\w+$/
             ):require.context(
-                "../components/html",
+                "../view/html",
                 false,
                 /^\.\/(.*)\.\w+$/
             );

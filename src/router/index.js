@@ -3,11 +3,11 @@ import Router from 'vue-router'
 import basic from '../utils/Basic'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
-import HelloWorld from '../components/HelloWorld'
+import HelloWorld from '../view/HelloWorld'
 
 Vue.use(Router)
 let routes = []
-basic.pathComponents.forEach(result=>result.requireComponent.keys().forEach(fileName => {
+basic.pathComponents.forEach(result => result.requireComponent.keys().forEach(fileName => {
   // 获取组件配置
   const componentConfig = result.requireComponent(fileName)
 
@@ -19,7 +19,7 @@ basic.pathComponents.forEach(result=>result.requireComponent.keys().forEach(file
     )
   )
   routes.push({
-    path: '/' +result.fileName+"/"+ componentName,
+    path: '/' + result.fileName + "/" + componentName,
     name: componentName,
     component: componentConfig.default || componentConfig
   })
@@ -28,7 +28,6 @@ routes.push({
   path: '/',
   component: HelloWorld
 })
-console.log(routes)
 export default new Router({
   routes: routes
 })
