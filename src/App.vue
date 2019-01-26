@@ -21,4 +21,7 @@ export default {
   color: #2c3e50;
   display: flex;
 }
+ #app /deep/ .content{
+   padding: 20px;
+}
 </style>

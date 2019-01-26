@@ -1,9 +1,3 @@
 <template>
-<div>111</div>
+<div>记录学习</div>
 </template>
-<script>
-
-export default {
-
-};
-</script>
