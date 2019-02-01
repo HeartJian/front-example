@@ -15,7 +15,6 @@ main {
   height: 100vh;
   width: 100%;
   padding: 60px 80px 80px;
-  background: #b4a078;
 }
 .content {
   padding: 12px;
@@ -24,7 +23,7 @@ main {
   border: 10px solid hsla(0, 0%, 100%, 0.5);
 }
 label {
-  color: #f4f0ea;
+  color: #050505;
 }
 input[id="pb"]:checked ~ .content {
   background-clip: padding-box;

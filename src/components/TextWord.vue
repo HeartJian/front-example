@@ -4,11 +4,9 @@
       <div class="bar"></div>
       <a>{{text}}</a>
     </div>
-    <div v-for="(a,index) in textArray" :key="index">
-      <div class="header">
+    <div class="header" v-for="(a,index) in textArray" :key="index">
         <span class="bar"></span>
         <a>{{a}}</a>
-      </div>
     </div>
   </div>
 </template>
