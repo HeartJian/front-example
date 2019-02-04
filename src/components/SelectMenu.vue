@@ -20,20 +20,21 @@
           v-for="key in pathComponent.keys"
           :key="key"
           :index="key"
-        >{{key}}</el-menu-item>
+        >{{pathComponent.names[key]||key}}</el-menu-item>
       </el-submenu>
     </el-menu>
   </div>
 </template>
 
 <script>
-import basic from "../utils/Basic.js";
+import { Basic } from "../utils/Basic.js";
 import { create } from "domain";
+
 export default {
   data: function() {
     return {
       defaultActive: sessionStorage.getItem("activeMenus"),
-      pathComponents: basic.pathComponents
+      pathComponents: Basic.pathComponents
     };
   },
   methods: {

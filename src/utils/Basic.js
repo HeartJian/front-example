@@ -1,29 +1,33 @@
-import PathComponent from './PathComponent'
-
-class Basic {
+import PathComponent from './PathComponent';
+const selectPath = ['js', 'css']
+const names = { ChatRoom:"聊天室" }
+// 根据path的不同 扫描不同的文件夹
+class BasicInfo {
     constructor() {
-        let path = ['html', 'js', 'css']
-        this.pathComponents = path.map(a => {
+        this.pathComponents = selectPath.map(a => {
             let result = new PathComponent(a);
-            result.requireComponent = a==='js'? require.context(
+            result.requireComponent = a === 'js' ? require.context(
                 "../view/js",
                 false,
                 /^\.\/(.*)\.\w+$/
-            ):a==='css'? require.context(
+            ) : a === 'css' ? require.context(
                 "../view/css",
                 false,
                 /^\.\/(.*)\.\w+$/
-            ):require.context(
-                "../view/html",
-                false,
-                /^\.\/(.*)\.\w+$/
-            );
+            ) : null;
             result.keys = result.requireComponent.keys().map(a => a.replace(/^\.\/(.*)\.\w+$/, '$1'));
+            result.names=names
             return result;
         })
-        
     }
-
+    // 添加二级目录名
+    addName = (fileName, names) => {
+        this.pathComponents.forEach(pathComponent => {
+            if (pathComponent.fileName === fileName) {
+                pathComponent.names = names;
+            }
+        })
+    }
 }
 
-export default new Basic()
+export const Basic = new BasicInfo()

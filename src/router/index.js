@@ -1,16 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import basic from '../utils/Basic'
+import {Basic} from '../utils/Basic'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 import HelloWorld from '../view/HelloWorld'
 
 Vue.use(Router)
 let routes = []
-basic.pathComponents.forEach(result => result.requireComponent.keys().forEach(fileName => {
+Basic.pathComponents.forEach(result => result.requireComponent.keys().forEach(fileName => {
   // 获取组件配置
   const componentConfig = result.requireComponent(fileName)
-
   // 获取组件的 PascalCase 命名
   const componentName = upperFirst(
     camelCase(
