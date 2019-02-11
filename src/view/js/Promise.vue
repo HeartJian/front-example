@@ -10,16 +10,16 @@
 const text1=`<pre></pre>`
 
 function Promise(fn) {
-    var value = null,
+    let value = null,
         callbacks = [];  //callbacks为数组，因为可能同时有很多个回调
-
+    const self= this
     this.then = function (onFulfilled) {
         callbacks.push(onFulfilled);
+        return self
     };
 
     function resolve(value) {
         callbacks.forEach(function (callback) {
-            console.log(callbacks,callback)
             callback(value);
         });
     }                                  
@@ -27,11 +27,14 @@ function Promise(fn) {
 }
 
 const asynchronous=(resolve)=>{setTimeout(resolve,5000)};
-new Promise(asynchronous).then(()=>{console.log("hello")})
+// new Promise(asynchronous).then(()=>{console.log("hello")}).then(()=>{console.log("hello")})
+
+
+
 
 export default {
     data:function(){
-        return {text1:text1}
+        return {text1:'text1',textArray1:[]}
     }
 };
 </script>
