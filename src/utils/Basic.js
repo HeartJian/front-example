@@ -1,6 +1,6 @@
 import PathComponent from './PathComponent';
 const selectPath = ['js', 'css']
-const names = { ChatRoom:"聊天室" }
+const names = { ChatRoom:"聊天室",CallBack:"优雅的回调",Promise:"JS实现Promise" }
 // 根据path的不同 扫描不同的文件夹
 class BasicInfo {
     constructor() {

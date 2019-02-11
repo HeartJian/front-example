@@ -54,7 +54,7 @@ export default {
   border-width: 6px;
   border-style: solid;
   border-color: #409eff #409eff transparent transparent;
-  display: inline-block;
+  display: block;
   transform: rotateY(180deg);
 }
 </style>

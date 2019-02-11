@@ -22,19 +22,28 @@ export default {
   color: #4c5054;
   display: flex;
 }
-
-#app /deep/ .content {
-  padding: 20px;
+#app pre {
   color: #4c5054;
+  font-family: Microsoft YaHei;
+  font-size: 15px;
+  margin: 0
 }
 
 .b-card {
   height: 50vh;
-  width: 40vw;
   min-width: 500px;
   margin: 10px;
   color: #4c5054;
   font-family: Microsoft YaHei;
   font-size: 15px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+  padding: 20px;
+  color: #4c5054;
 }
 </style>
