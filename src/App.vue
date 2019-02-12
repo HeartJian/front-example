@@ -32,7 +32,7 @@ export default {
 .b-card {
   height: 50vh;
   min-width: 500px;
-  margin: 10px;
+  margin: 20px 10px;
   color: #4c5054;
   font-family: Microsoft YaHei;
   font-size: 15px;
@@ -41,9 +41,10 @@ export default {
 .content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: auto;
   padding: 20px;
   color: #4c5054;
+  align-content: space-around
 }
 </style>
