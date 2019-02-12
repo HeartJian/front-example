@@ -28,7 +28,6 @@
 
 <script>
 import { Basic } from "../utils/Basic.js";
-import { create } from "domain";
 
 export default {
   data: function() {

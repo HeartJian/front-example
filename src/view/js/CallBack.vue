@@ -1,13 +1,16 @@
 <template>
   <div class="content">
     <el-card class="b-card">
-         <text-word :header="text" :contents="textArray"/>
+      <text-word :header="text" :contents="textArray"/>
     </el-card>
     <el-card class="b-card">
-         <text-word :header="text2" :contents="textArray1"/>
+      <text-word :header="text2" :contents="textArray1"/>
     </el-card>
-	  <el-card class="b-card">
-         <text-word :header="text4" :contents="textArray2"/>
+    <el-card class="b-card">
+      <text-word :header="text4" :contents="textArray2"/>
+    </el-card>
+    <el-card class="b-card">
+      <text-word :header="text6" :contents="textArray3"/>
     </el-card>
   </div>
 </template>
@@ -57,7 +60,21 @@ g.next().value
 	.then(()=>{g.next()});
 `;
 
+const text6 = `3.使用async,await`;
+const text7 = `const asynchronous = resolve => {
+  setTimeout(() => {
+    resolve("不像龟派气功");
+  }, 4000);
+};
 
+async function excute() {
+  const v = await new Promise(asynchronous);
+  (() => {})();
+  (() => {})();
+  console.log(v);
+}
+excute();
+`;
 
 export default {
   data: function() {
@@ -65,9 +82,11 @@ export default {
       textArray: [text1],
       textArray1: [text3],
       textArray2: [text5],
+      textArray3: [text7],
       text: text,
       text2: text2,
-      text4: text4
+      text4: text4,
+      text6: text6
     };
   }
 };
@@ -75,6 +94,5 @@ export default {
 
 <style scoped>
 .b-card {
-  /* height: 90vh; */
 }
 </style>
