@@ -4,9 +4,13 @@
       <div class="bar"></div>
       <a class="text-word-header">{{header}}</a>
     </div>
-    <div v-if="contents" class="text-word-content" v-for="(content,index) in contents" :key="index">
+    <div v-if="contents">
+      <div class="text-word-content" v-for="(content,index) in contents" :key="index">
         <span class="bar"></span>
-        <a ><pre v-html="content">{{content}}</pre></a>
+        <a>
+          <pre v-html="content">{{content}}</pre>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +24,7 @@ export default {
 <style>
 .text-word-header {
   font-weight: 600;
+  font-family: STXihei;
 }
 .text-word-content .bar {
   width: 5px;
