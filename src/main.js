@@ -8,11 +8,18 @@ import TextWord from "./components/TextWord.vue";
 import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.config.productionTip = false
+
+require('./mock.js')
 Vue.use(ElementUI)
-Vue.component("TextWord",TextWord)
+Vue.component("TextWord", TextWord)
 new Vue({
   el: '#app',
   router,
   components: { App },
   template: '<App/>'
 })
+
+
+
+
+

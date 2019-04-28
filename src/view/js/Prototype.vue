@@ -18,8 +18,6 @@ Person.prototype.getName = () => {
 
 function objFactory ()  {
   const obj = new Object(),Constructor = [].shift.call(arguments);
-  console.log(Constructor)
-  console.log([].shift.call(arguments))
   obj._proto_ = Constructor.prototype;
   const ret = Constructor.apply(obj, arguments);
   return typeof ret === "object" ? ret : obj;

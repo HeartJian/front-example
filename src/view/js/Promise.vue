@@ -10,7 +10,6 @@
 const text1 = `<pre></pre>`;
 const isFunction = fn => typeof fn === "function";
 function Promise(fn) {
-    console.log
     var promise = this,
         value = null;
         promise._resolves = [];

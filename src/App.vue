@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <select-menu></select-menu>
+
     <router-view/>
   </div>
 </template>
 
 <script>
-import SelectMenu from "./components/SelectMenu.vue";
-
+//import SelectMenu from "./components/SelectMenu.vue";
+ //   <select-menu></select-menu>
 export default {
-  components: { SelectMenu },
+ // components: { SelectMenu },
   name: "App"
 };
 </script>
@@ -30,7 +30,7 @@ export default {
 }
 
 .b-card {
-  height: 50vh;
+  min-height: 50vh;
   min-width: 500px;
   margin: 20px 10px;
   color: #4c5054;
