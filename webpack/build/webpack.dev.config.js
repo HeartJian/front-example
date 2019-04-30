@@ -2,6 +2,8 @@ var webpack = require('webpack')
 const baseWebpackConfig = require('./webpack.base.config')
 const merge = require('webpack-merge')
 
+const mock=require('./mock-option/mockOption')
+
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   plugins:[
