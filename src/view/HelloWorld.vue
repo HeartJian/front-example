@@ -9,7 +9,7 @@ export default {
 
     methods:{
         requestLocal(){
-            request('',{},'GET')
+            request('',{},'POST')
         }
     }
     

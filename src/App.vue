@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-
+  <select-menu></select-menu>
     <router-view/>
   </div>
 </template>
 
 <script>
-//import SelectMenu from "./components/SelectMenu.vue";
- //   <select-menu></select-menu>
+import SelectMenu from "./components/SelectMenu.vue";
+
 export default {
- // components: { SelectMenu },
+ components: { SelectMenu },
   name: "App"
 };
 </script>
