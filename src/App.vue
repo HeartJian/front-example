@@ -45,6 +45,6 @@ export default {
   margin: auto;
   padding: 20px;
   color: #4c5054;
-  align-content: space-around
+  align-content: space-around;
 }
 </style>

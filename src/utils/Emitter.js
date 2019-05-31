@@ -5,15 +5,15 @@ function Emitter() {
  
 //注册事件
 Emitter.prototype.bind = function(eventName, callback) {
-    var listener = this._listener[eventName] || [];//this._listener[eventName]没有值则将listener定义为[](数组)。
+    const listener = this._listener[eventName] || [];//this._listener[eventName]没有值则将listener定义为[](数组)。
     listener.push(callback);
     this._listener[eventName] = listener;
 }
  
  //触发事件
-Emitter.prototype.trigger = function(eventName) {
-    var args = Array.prototype.slice.apply(arguments).slice(1);//atgs为获得除了eventName后面的参数(注册事件的参数)
-    var listener = this._listener[eventName];
+Emitter.prototype.on = function(eventName) {
+    const args = Array.prototype.slice.apply(arguments).slice(1);//atgs为获得除了eventName后面的参数(注册事件的参数)
+    const listener = this._listener[eventName];
  
     if(!Array.isArray(listener)) return;//自定义事件名不存在
     listener.forEach(function(callback) {
@@ -25,4 +25,4 @@ Emitter.prototype.trigger = function(eventName) {
     })
 }
 
-export default new Emitter()
+export default  Emitter

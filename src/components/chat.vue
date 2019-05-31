@@ -1,8 +1,9 @@
 <template>
-    <div class="chat">
-        <div v-for="(content,index) in contents" :key="index" class="chat-line">
-        <div :class="{'left-triangle':!isLeft(content),'right-triangle':isLeft(content)}"></div>
-        <div class="chat-content" :style="{float:fAttribute(content)}">{{content.message}}</div>
+    <div >
+        <div v-for="(content,index) in contents" :key="index" :class="{'chat-line':true,'content-right':isNotMe(content)}" :id="`chat${index}`">
+        <div :class="{'left-triangle':!isNotMe(content)}"></div>
+        <div class="chat-content" >{{content.message}}</div>
+        <div :class="{'right-triangle':isNotMe(content)}"></div>
         </div>
     </div>
 </template>
@@ -12,49 +13,45 @@ export default {
   props: ["contents"],
 
   methods: {
-    isLeft(content) {
+    isNotMe(content) {
       return content.talker !== "me";
     },
-    fAttribute(content) {
-        console.log(this.isLeft(content) )
-      return this.isLeft(content) ?  "right":"";
-    }
   }
 };
 </script>
 
 <style>
-.chat {
+.content-right{
+  text-align: right;
 }
+
 .chat-content {
   border: 1px solid #409eff;
   background: #409eff;
-  max-width: 70%;
   display: inline-block;
   line-height: 30px;
   border-radius: 5px;
   padding: 2px 10px;
+  max-width: 250px;
 }
 .chat-line {
+      margin: 20px;
 }
 .left-triangle {
-  border-width: 6px;
+  border-width: 8px;
   border-style: solid;
-  border-color: #409eff #409eff transparent transparent;
+  border-color: transparent #409eff transparent transparent;
   display: inline-block;
   position: relative;
   left: 5px;
-  top: -7px;
 }
 
 .right-triangle {
-  float: right;
-  top: 10px;
-  position: relative;
-  border-width: 6px;
-  border-style: solid;
-  border-color: #409eff #409eff transparent transparent;
-  display: block;
-  transform: rotateY(180deg);
+    border-width:  8px;
+    border-style: solid;
+    border-color: transparent transparent transparent #409eff;
+    position: relative;
+    right: 5px;
+    display: inline-block;
 }
 </style>
